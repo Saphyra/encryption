@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <artifactId></artifactId>
-        <projectName></projectName>
-        <projectDescription></projectDescription>
+        <artifactId>encryption</artifactId>
+        <projectName>Encryption Library</projectName>
+        <projectDescription>Library contains services for encrypting and decrypting</projectDescription>
     </properties>
 
     <groupId>com.github.saphyra</groupId>
