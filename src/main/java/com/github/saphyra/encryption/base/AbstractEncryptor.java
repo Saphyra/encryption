@@ -2,7 +2,7 @@ package com.github.saphyra.encryption.base;
 
 public abstract class AbstractEncryptor<T> implements Encryptor<T>{
     @Override
-    public T encryptEntity(T entity, String key) {
+    public String encryptEntity(T entity, String key) {
         validateKey(key);
         if(entity == null){
             return null;
@@ -11,7 +11,7 @@ public abstract class AbstractEncryptor<T> implements Encryptor<T>{
     }
 
     @Override
-    public T decryptEntity(T entity, String key) {
+    public T decryptEntity(String entity, String key) {
         validateKey(key);
         if(entity == null){
             return null;
@@ -25,7 +25,7 @@ public abstract class AbstractEncryptor<T> implements Encryptor<T>{
         }
     }
 
-    protected abstract T encrypt(T entity, String key);
+    protected abstract String encrypt(T entity, String key);
 
-    protected abstract T decrypt(T entity, String key);
+    protected abstract T decrypt(String entity, String key);
 }

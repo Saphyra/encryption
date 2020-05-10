@@ -1,5 +1,6 @@
 package com.github.saphyra.encryption.configuration;
 
+import com.github.saphyra.encryption.impl.BooleanEncryptor;
 import com.github.saphyra.encryption.impl.IntegerEncryptor;
 import com.github.saphyra.encryption.impl.PasswordService;
 import com.github.saphyra.encryption.impl.StringEncryptor;
@@ -21,5 +22,10 @@ public class EncryptionBeanConfig {
     @Bean
     public IntegerEncryptor integerEncryptor(StringEncryptor stringEncryptor){
         return new IntegerEncryptor(stringEncryptor);
+    }
+
+    @Bean
+    public BooleanEncryptor booleanEncryptor(StringEncryptor stringEncryptor){
+        return new BooleanEncryptor(stringEncryptor);
     }
 }

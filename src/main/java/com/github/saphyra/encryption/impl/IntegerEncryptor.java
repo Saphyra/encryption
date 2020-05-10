@@ -1,17 +1,19 @@
 package com.github.saphyra.encryption.impl;
 
+import com.github.saphyra.encryption.base.AbstractEncryptor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
-public class IntegerEncryptor{
+public class IntegerEncryptor extends AbstractEncryptor<Integer> {
     private final StringEncryptor stringEncryptor;
 
-    public String encryptEntity(Integer entity, String key) {
+    @Override
+    protected String encrypt(Integer entity, String key) {
         return stringEncryptor.encryptEntity(entity.toString(), key);
     }
 
-    public Integer decryptEntity(String entity, String key) {
+    @Override
+    protected Integer decrypt(String entity, String key) {
         return Integer.valueOf(stringEncryptor.decryptEntity(entity, key));
     }
 }
